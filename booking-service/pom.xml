@@ -8,7 +8,6 @@
         <artifactId>book-my-show-onboard-cinema</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
     <artifactId>booking-service</artifactId>
     <packaging>pom</packaging>
     <modules>
