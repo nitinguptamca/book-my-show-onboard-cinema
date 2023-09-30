@@ -3,7 +3,6 @@ package book.my.show.payment.service.domain.event;
 import book.my.show.booking.service.domain.event.publisher.DomainEventPublisher;
 import book.my.show.payment.service.domain.entity.Payment;
 
-
 import java.time.ZonedDateTime;
 import java.util.List;
 
