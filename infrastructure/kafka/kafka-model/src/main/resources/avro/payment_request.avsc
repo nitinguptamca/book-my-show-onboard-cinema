@@ -44,10 +44,10 @@
             }
         },
         {
-            "name": "paymentOrderStatus",
+            "name": "paymentBookingStatus",
             "type": {
                   "type": "enum",
-                  "name": "PaymentOrderStatus",
+                  "name": "PaymentBookingStatus",
                   "symbols": ["PENDING", "CANCELLED"]
                }
         }

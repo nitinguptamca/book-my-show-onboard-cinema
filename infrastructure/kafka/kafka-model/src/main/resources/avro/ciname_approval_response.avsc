@@ -35,10 +35,10 @@
             }
         },
         {
-            "name": "orderApprovalStatus",
+            "name": "bookingApprovalStatus",
             "type": {
                   "type": "enum",
-                  "name": "OrderApprovalStatus",
+                  "name": "BookingApprovalStatus",
                   "symbols": ["APPROVED", "REJECTED"]
                }
         },

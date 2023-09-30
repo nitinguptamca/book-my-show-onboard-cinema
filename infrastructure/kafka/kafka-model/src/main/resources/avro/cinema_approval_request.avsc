@@ -28,10 +28,10 @@
             }
         },
         {
-            "name": "cinemaOrderStatus",
+            "name": "cinemaBookingStatus",
             "type": {
                   "type": "enum",
-                  "name": "CinemaOrderStatus",
+                  "name": "CinemaBookingStatus",
                   "symbols": ["PAID"]
             }
         },
