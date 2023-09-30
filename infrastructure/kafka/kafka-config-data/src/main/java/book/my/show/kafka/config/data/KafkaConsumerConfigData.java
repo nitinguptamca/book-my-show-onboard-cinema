@@ -1,4 +1,4 @@
-package book.my.show.config.data;
+package book.my.show.kafka.config.data;
 
 
 import lombok.Data;
