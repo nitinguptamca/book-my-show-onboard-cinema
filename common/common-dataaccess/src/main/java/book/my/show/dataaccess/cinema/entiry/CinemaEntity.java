@@ -34,7 +34,7 @@ public class CinemaEntity {
     private BigDecimal moviePrice;
     private Boolean movieAvailable;
     private LocalDateTime movieTime;
-    private String seatNo;
+    private String seatNumber;
 
     @Override
     public boolean equals(Object o) {

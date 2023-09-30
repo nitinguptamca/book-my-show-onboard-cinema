@@ -1,0 +1,74 @@
+{
+    "namespace": "book.my.show.kafka.booking.avro.model",
+    "type": "record",
+    "name": "CinemaApprovalRequestAvroModel",
+    "fields": [
+        {
+            "name": "id",
+            "type": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "sagaId",
+            "type": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "cinemaId",
+            "type": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "bookingId",
+            "type": {
+                "type": "string"
+            }
+        },
+        {
+            "name": "cinemaOrderStatus",
+            "type": {
+                  "type": "enum",
+                  "name": "CinemaOrderStatus",
+                  "symbols": ["PAID"]
+            }
+        },
+        {
+            "name": "movies",
+            "type": {
+                "type": "array",
+                "items":{
+                  "name":"Movie",
+                  "type":"record",
+                  "fields":[
+                    {"name":"id", "type": "string", "logicalType": "uuid"},
+                    {"name":"seatNumber", "type": "string"},
+                    {"name":"movieTime", "type": {
+                        "type": "long",
+                        "logicalType": "timestamp-millis"
+                    }},
+                    {"name":"quantity", "type": "int"}
+                   ]
+               }
+            }
+        },
+        {
+            "name": "price",
+            "type": {
+                "type": "bytes",
+                "logicalType": "decimal",
+                "precision": 10,
+                "scale": 2
+            }
+        },
+        {
+            "name": "createdAt",
+            "type": {
+                "type": "long",
+                "logicalType": "timestamp-millis"
+            }
+        }
+    ]
+}
