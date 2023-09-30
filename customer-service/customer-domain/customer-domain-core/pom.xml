@@ -5,21 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>book.my.show</groupId>
-        <artifactId>book-my-show-onboard-cinema</artifactId>
+        <artifactId>customer-domain</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>booking-service</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>booking-application</module>
-        <module>booking-container</module>
-        <module>booking-domain</module>
-        <module>booking-dataaccess</module>
-        <module>booking-messaging</module>
-        <module>booking-domain/booking-domain-core</module>
-        <module>booking-domain/booking-application-service</module>
-    </modules>
+    <artifactId>customer-domain-core</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

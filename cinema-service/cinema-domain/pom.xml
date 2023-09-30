@@ -10,6 +10,11 @@
     </parent>
 
     <artifactId>cinema-domain</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>cinema-application-service</module>
+        <module>cinema-domeain-core</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
