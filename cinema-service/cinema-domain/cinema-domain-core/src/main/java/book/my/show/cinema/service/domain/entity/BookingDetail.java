@@ -33,7 +33,7 @@ public class BookingDetail extends BaseEntity<BookingId> {
         return totalAmount;
     }
 
-    public List<Movie> getCinemas() {
+    public List<Movie> getMovies() {
         return movies;
     }
 
@@ -61,7 +61,7 @@ public class BookingDetail extends BaseEntity<BookingId> {
             return this;
         }
 
-        public Builder cinemas(List<Movie> val) {
+        public Builder movies(List<Movie> val) {
             movies = val;
             return this;
         }

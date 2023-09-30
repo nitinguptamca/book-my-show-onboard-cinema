@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class Movie extends BaseEntity<MovieId> {
     private String name;
     private Money price;
-    private final int quantity;
+    private  int quantity;
     private boolean available;
     private LocalDateTime movieTime;
     private String seatNumber;
@@ -21,14 +21,13 @@ public class Movie extends BaseEntity<MovieId> {
     }
 
     private Movie(Builder builder) {
-        setId(builder.cinemaId);
+        setId(builder.movieId);
         name = builder.name;
         price = builder.price;
         quantity = builder.quantity;
         available = builder.available;
         movieTime=builder.movieTime;
         seatNumber=builder.seatNumber;
-
     }
 
     public static Builder builder() {
@@ -56,7 +55,7 @@ public class Movie extends BaseEntity<MovieId> {
     public String getSeatNumber(){return  seatNumber;}
 
     public static final class Builder {
-        private MovieId cinemaId;
+        private MovieId movieId;
         private String name;
         private Money price;
         private int quantity;
@@ -67,8 +66,8 @@ public class Movie extends BaseEntity<MovieId> {
         private Builder() {
         }
 
-        public Builder cinemaId(MovieId val) {
-            cinemaId = val;
+        public Builder movieId(MovieId val) {
+            movieId = val;
             return this;
         }
 

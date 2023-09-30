@@ -20,28 +20,28 @@ import static book.my.show.booking.service.domain.constants.DomainConstants.UTC;
 public class CinemaDomainServiceImpl implements CinemaDomainService {
 
     @Override
-    public BookingApprovalEvent validateBooking(Cinema restaurant,
+    public BookingApprovalEvent validateBooking(Cinema cinema,
                                                 List<String> failureMessages,
                                                 DomainEventPublisher<BookingApprovedEvent>
                                                     bookingApprovedEventDomainEventPublisher,
                                                 DomainEventPublisher<BookingRejectedEvent>
                                                     bookingRejectedEventDomainEventPublisher) {
-        restaurant.validateBooking(failureMessages);
-        log.info("Validating booking with id: {}", restaurant.getBookingDetail().getId().getValue());
+        cinema.validateBooking(failureMessages);
+        log.info("Validating booking with id: {}", cinema.getBookingDetail().getId().getValue());
 
         if (failureMessages.isEmpty()) {
-            log.info("Booking is approved for booking id: {}", restaurant.getBookingDetail().getId().getValue());
-            restaurant.constructBookingApproval(BookingApprovalStatus.APPROVED);
-            return new BookingApprovedEvent(restaurant.getBookingApproval(),
-                    restaurant.getId(),
+            log.info("Booking is approved for booking id: {}", cinema.getBookingDetail().getId().getValue());
+            cinema.constructBookingApproval(BookingApprovalStatus.APPROVED);
+            return new BookingApprovedEvent(cinema.getBookingApproval(),
+                    cinema.getId(),
                     failureMessages,
                     ZonedDateTime.now(ZoneId.of(UTC)),
                     bookingApprovedEventDomainEventPublisher);
         } else {
-            log.info("Booking is rejected for booking id: {}", restaurant.getBookingDetail().getId().getValue());
-            restaurant.constructBookingApproval(BookingApprovalStatus.REJECTED);
-            return new BookingRejectedEvent(restaurant.getBookingApproval(),
-                    restaurant.getId(),
+            log.info("Booking is rejected for booking id: {}", cinema.getBookingDetail().getId().getValue());
+            cinema.constructBookingApproval(BookingApprovalStatus.REJECTED);
+            return new BookingRejectedEvent(cinema.getBookingApproval(),
+                    cinema.getId(),
                     failureMessages,
                     ZonedDateTime.now(ZoneId.of(UTC)),
                     bookingRejectedEventDomainEventPublisher);

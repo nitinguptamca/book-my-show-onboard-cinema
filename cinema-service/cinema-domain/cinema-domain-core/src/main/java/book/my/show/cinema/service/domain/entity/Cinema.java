@@ -21,7 +21,7 @@ public class Cinema extends AggregateRoot<CinemaId> {
        if (bookingDetail.getBookingStatus() != BookingStatus.PAID) {
            failureMessages.add("Payment is not completed for booking: " + bookingDetail.getId());
        }
-       Money totalAmount = bookingDetail.getCinemas().stream().map(cinema -> {
+       Money totalAmount = bookingDetail.getMovies().stream().map(cinema -> {
            if (!cinema.isAvailable()) {
                failureMessages.add("Cinema with id: " + cinema.getId().getValue()
                        + " is not available");

@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface CinemaDomainService {
 
-    BookingApprovalEvent validateBooking(Cinema restaurant,
+    BookingApprovalEvent validateBooking(Cinema cinema,
                                          List<String> failureMessages,
                                          DomainEventPublisher<BookingApprovedEvent> bookingApprovedEventDomainEventPublisher,
                                          DomainEventPublisher<BookingRejectedEvent> bookingRejectedEventDomainEventPublisher);
