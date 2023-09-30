@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
@@ -33,7 +34,7 @@ public class CinemaEntity {
     private String MovieName;
     private BigDecimal moviePrice;
     private Boolean movieAvailable;
-    private LocalDateTime movieTime;
+    private Instant movieTime;
     private String seatNumber;
 
     @Override

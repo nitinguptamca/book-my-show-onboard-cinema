@@ -61,12 +61,12 @@ public class CinemaDataAccessMapper {
                 .build();
     }
 
-    public BookingApproval orderApprovalEntityToBookingApproval(book.my.show.cinema.service.dataaccess.cinema.entity.BookingApprovalEntity orderApprovalEntity) {
+    public BookingApproval bookingApprovalEntityToBookingApproval(book.my.show.cinema.service.dataaccess.cinema.entity.BookingApprovalEntity bookingApprovalEntity) {
         return BookingApproval.builder()
-                .bookingApprovalId(new BookingApprovalId(orderApprovalEntity.getId()))
-                .cinemaId(new CinemaId(orderApprovalEntity.getCinemaId()))
-                .bookingId(new BookingId(orderApprovalEntity.getBookingId()))
-                .approvalStatus(orderApprovalEntity.getBookingApprovalStatus())
+                .bookingApprovalId(new BookingApprovalId(bookingApprovalEntity.getId()))
+                .cinemaId(new CinemaId(bookingApprovalEntity.getCinemaId()))
+                .bookingId(new BookingId(bookingApprovalEntity.getBookingId()))
+                .approvalStatus(bookingApprovalEntity.getBookingApprovalStatus())
                 .build();
     }
 

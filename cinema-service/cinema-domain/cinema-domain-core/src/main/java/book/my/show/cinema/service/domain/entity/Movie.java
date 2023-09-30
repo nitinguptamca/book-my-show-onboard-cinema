@@ -4,6 +4,7 @@ import book.my.show.booking.service.domain.entity.BaseEntity;
 import book.my.show.booking.service.domain.valueobject.Money;
 import book.my.show.booking.service.domain.valueobject.MovieId;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 public class Movie extends BaseEntity<MovieId> {
@@ -11,7 +12,7 @@ public class Movie extends BaseEntity<MovieId> {
     private Money price;
     private  int quantity;
     private boolean available;
-    private LocalDateTime movieTime;
+    private Instant movieTime;
     private String seatNumber;
 
     public void updateWithConfirmedNamePriceAndAvailability(String name, Money price, boolean available) {
@@ -50,7 +51,7 @@ public class Movie extends BaseEntity<MovieId> {
         return available;
     }
 
-    public LocalDateTime getMovieTime(){ return  movieTime;}
+    public Instant getMovieTime(){ return  movieTime;}
 
     public String getSeatNumber(){return  seatNumber;}
 
@@ -60,7 +61,7 @@ public class Movie extends BaseEntity<MovieId> {
         private Money price;
         private int quantity;
         private boolean available;
-        private LocalDateTime movieTime;
+        private Instant movieTime;
         private String seatNumber;
 
         private Builder() {
@@ -90,7 +91,7 @@ public class Movie extends BaseEntity<MovieId> {
             available = val;
             return this;
         }
-        public Builder movieTime(LocalDateTime   val) {
+        public Builder movieTime(Instant   val) {
             movieTime = val;
             return this;
         } public Builder seatNumber(String val) {

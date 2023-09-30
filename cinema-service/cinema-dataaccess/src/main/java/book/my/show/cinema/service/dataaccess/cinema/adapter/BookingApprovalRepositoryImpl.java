@@ -20,10 +20,10 @@ public class BookingApprovalRepositoryImpl implements BookingApprovalRepository 
     }
 
     @Override
-    public BookingApproval save(BookingApproval orderApproval) {
+    public BookingApproval save(BookingApproval bookingApproval) {
         return cinemaDataAccessMapper
-                .orderApprovalEntityToBookingApproval(bookingApprovalJpaRepository
-                        .save(cinemaDataAccessMapper.bookingApprovalToBookingApprovalEntity(orderApproval)));
+                .bookingApprovalEntityToBookingApproval(bookingApprovalJpaRepository
+                        .save(cinemaDataAccessMapper.bookingApprovalToBookingApprovalEntity(bookingApproval)));
     }
 
 }

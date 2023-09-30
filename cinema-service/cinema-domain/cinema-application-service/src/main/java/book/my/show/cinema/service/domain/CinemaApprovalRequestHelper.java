@@ -48,7 +48,7 @@ public class CinemaApprovalRequestHelper {
 
     @Transactional
     public BookingApprovalEvent persistBookingApproval(CinemaApprovalRequest cinemaApprovalRequest) {
-        log.info("Processing cinema approval for order id: {}", cinemaApprovalRequest.getBookingId());
+        log.info("Processing cinema approval for booking id: {}", cinemaApprovalRequest.getBookingId());
         List<String> failureMessages = new ArrayList<>();
         Cinema cinema = findCinema(cinemaApprovalRequest);
         BookingApprovalEvent bookingApprovalEvent=
