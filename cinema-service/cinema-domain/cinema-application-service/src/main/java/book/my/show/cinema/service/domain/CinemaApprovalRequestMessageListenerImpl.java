@@ -21,7 +21,7 @@ public class CinemaApprovalRequestMessageListenerImpl implements CinemaApprovalR
     @Override
     public void approveBooking(CinemaApprovalRequest cinemaApprovalRequest) {
         BookingApprovalEvent bookingApprovalEvent =
-                cinemaApprovalRequestHelper.persistOrderApproval(cinemaApprovalRequest);
+                cinemaApprovalRequestHelper.persistBookingApproval(cinemaApprovalRequest);
         bookingApprovalEvent.fire();
     }
 }

@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@EnableJpaRepositories(basePackages = "com.food.bookinging.system.payment.service.dataaccess")
-@EntityScan(basePackages = "com.food.bookinging.system.payment.service.dataaccess")
-@SpringBootApplication(scanBasePackages = "com.food.bookinging.system")
+@EnableJpaRepositories(basePackages = "book.my.show.payment.service.dataaccess")
+@EntityScan(basePackages = "book.my.show.payment.service.dataaccess")
+@SpringBootApplication(scanBasePackages = "book.my.show")
 public class PaymentServiceApplication {
     public static void main(String[] args) {
         SpringApplication.run(PaymentServiceApplication.class, args);
