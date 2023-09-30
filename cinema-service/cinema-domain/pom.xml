@@ -15,7 +15,4 @@
         <module>cinema-application-service</module>
         <module>cinema-domain-core</module>
     </modules>
-
-
-
 </project>
