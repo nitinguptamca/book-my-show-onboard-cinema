@@ -10,6 +10,10 @@ public abstract class BaseEntity<ID> {
         this.id = id;
     }
 
+    public ID getId() {
+        return id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

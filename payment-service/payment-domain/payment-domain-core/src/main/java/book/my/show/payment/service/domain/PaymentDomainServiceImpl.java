@@ -43,12 +43,12 @@ public class PaymentDomainServiceImpl implements PaymentDomainService {
         validateCreditHistory(creditEntry, creditHistories, failureMessages);
 
         if (failureMessages.isEmpty()) {
-            log.info("Payment is initiated for order id: {}", payment.getBookingId().getValue());
+            log.info("Payment is initiated for booking id: {}", payment.getBookingId().getValue());
             payment.updateStatus(PaymentStatus.COMPLETED);
             return new PaymentCompletedEvent(payment, ZonedDateTime.now(ZoneId.of(UTC)),
                     paymentCompletedEventDomainEventPublisher);
         } else {
-            log.info("Payment initiation is failed for order id: {}", payment.getBookingId().getValue());
+            log.info("Payment initiation is failed for booking id: {}", payment.getBookingId().getValue());
             payment.updateStatus(PaymentStatus.FAILED);
             return new PaymentFailedEvent(payment, ZonedDateTime.now(ZoneId.of(UTC)), failureMessages,
                     paymentFailedEventDomainEventPublisher);
@@ -69,12 +69,12 @@ public class PaymentDomainServiceImpl implements PaymentDomainService {
         updateCreditHistory(payment, creditHistories, TransactionType.CREDIT);
 
        if (failureMessages.isEmpty()) {
-           log.info("Payment is cancelled for order id: {}", payment.getBookingId().getValue());
+           log.info("Payment is cancelled for booking id: {}", payment.getBookingId().getValue());
            payment.updateStatus(PaymentStatus.CANCELLED);
            return new PaymentCancelledEvent(payment, ZonedDateTime.now(ZoneId.of(UTC)),
                    paymentCancelledEventDomainEventPublisher);
        } else {
-           log.info("Payment cancellation is failed for order id: {}", payment.getBookingId().getValue());
+           log.info("Payment cancellation is failed for booking id: {}", payment.getBookingId().getValue());
            payment.updateStatus(PaymentStatus.FAILED);
            return new PaymentFailedEvent(payment, ZonedDateTime.now(ZoneId.of(UTC)), failureMessages,
                    paymentFailedEventDomainEventPublisher);
