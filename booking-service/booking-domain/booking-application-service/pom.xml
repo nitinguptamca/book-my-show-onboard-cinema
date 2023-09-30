@@ -5,13 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>book.my.show</groupId>
-        <artifactId>booking-service</artifactId>
+        <artifactId>booking-domain</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <artifactId>booking-application-service</artifactId>
 
-
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 </project>

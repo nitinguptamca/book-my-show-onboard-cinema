@@ -16,8 +16,6 @@
         <module>booking-domain</module>
         <module>booking-dataaccess</module>
         <module>booking-messaging</module>
-        <module>booking-domain/booking-domain-core</module>
-        <module>booking-domain/booking-application-service</module>
     </modules>
 
 
