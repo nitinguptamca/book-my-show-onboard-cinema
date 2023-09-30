@@ -23,7 +23,7 @@ public class CinemaDataAccessMapper {
 
     public List<UUID> cinemaToCinemaMovies(Cinema cinema) {
         return cinema.getBookingDetail().getMovies().stream()
-                .map(product -> product.getId().getValue())
+                .map(movie -> movie.getId().getValue())
                 .collect(Collectors.toList());
     }
 

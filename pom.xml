@@ -164,7 +164,6 @@
                 <artifactId>common-application</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
             <dependency>
                 <groupId>book.my.show</groupId>
                 <artifactId>common-dataaccess</artifactId>
