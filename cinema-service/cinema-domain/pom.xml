@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>cinema-application-service</module>
-        <module>cinema-domeain-core</module>
+        <module>cinema-domain-core</module>
     </modules>
 
 

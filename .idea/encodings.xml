@@ -29,8 +29,8 @@
     <file url="file://$PROJECT_DIR$/cinema-service/cinema-dataaccess/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cinema-service/cinema-domain/cinema-application-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cinema-service/cinema-domain/cinema-application-service/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cinema-service/cinema-domain/cinema-domeain-core/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/cinema-service/cinema-domain/cinema-domeain-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cinema-service/cinema-domain/cinema-domain-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cinema-service/cinema-domain/cinema-domain-core/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cinema-service/cinema-domain/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cinema-service/cinema-domain/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cinema-service/cinema-messaging/src/main/java" charset="UTF-8" />

@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>cinema-domeain-core</artifactId>
+    <artifactId>cinema-domain-core</artifactId>
 
 
 
