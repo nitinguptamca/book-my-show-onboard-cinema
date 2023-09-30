@@ -17,7 +17,7 @@ public class Booking extends AggregateRoot<BookingId> {
     private final CustomerId customerId;
     private final CinemaId cinemaId ;
     private final Money price;
-    private final List<BookingItems> items;
+    private final List<BookingItem> items;
 
     private TrackingId trackingId;
     private BookingStatus bookingStatus;
@@ -90,9 +90,9 @@ public class Booking extends AggregateRoot<BookingId> {
     }
 
     private void validateItemsPrice() {
-        Money BookingItemsTotal = items.stream().map(bookingItems -> {
-            validateItemPrice(bookingItems);
-            return bookingItems.getSubTotal();
+        Money BookingItemsTotal = items.stream().map(bookingItem -> {
+            validateItemPrice(bookingItem);
+            return bookingItem.getSubTotal();
         }).reduce(Money.ZERO, Money::add);
 
         if (!price.equals(BookingItemsTotal)) {
@@ -101,17 +101,17 @@ public class Booking extends AggregateRoot<BookingId> {
         }
     }
 
-    private void validateItemPrice(BookingItems bookingItems) {
-        if (!bookingItems.isPriceValid()) {
-            throw new BookingDomainException("Booking item price: " + bookingItems.getPrice().getAmount() +
-                    " is not valid for movie " + bookingItems.getMovie().getId().getValue());
+    private void validateItemPrice(BookingItem bookingItem) {
+        if (!bookingItem.isPriceValid()) {
+            throw new BookingDomainException("Booking item price: " + bookingItem.getPrice().getAmount() +
+                    " is not valid for movie " + bookingItem.getMovie().getId().getValue());
         }
     }
 
     private void initializeBookingItems() {
         long itemId = 1;
-        for (BookingItems bookingItems : items) {
-            bookingItems.initializeBookingItem(super.getId(), new BookingItemId(itemId++));
+        for (BookingItem bookingItem : items) {
+            bookingItem.initializeBookingItem(super.getId(), new BookingItemId(itemId++));
         }
     }
 
@@ -142,7 +142,7 @@ public class Booking extends AggregateRoot<BookingId> {
         return price;
     }
 
-    public List<BookingItems> getItems() {
+    public List<BookingItem> getItems() {
         return items;
     }
 
@@ -163,7 +163,7 @@ public class Booking extends AggregateRoot<BookingId> {
         private CustomerId customerId;
         private CinemaId cinemaId;
         private Money price;
-        private List<BookingItems> items;
+        private List<BookingItem> items;
         private TrackingId trackingId;
         private BookingStatus BookingStatus;
         private List<String> failureMessages;
@@ -192,7 +192,7 @@ public class Booking extends AggregateRoot<BookingId> {
             return this;
         }
 
-        public Builder items(List<BookingItems> val) {
+        public Builder items(List<BookingItem> val) {
             items = val;
             return this;
         }

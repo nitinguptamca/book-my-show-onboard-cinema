@@ -7,7 +7,7 @@ import book.my.show.booking.service.domain.valueobject.BookingItemId;
 
 import java.time.Instant;
 
-public class BookingItems extends BaseEntity<BookingItemId> {
+public class BookingItem extends BaseEntity<BookingItemId> {
     private BookingId bookingId;
     private final Movie movie;
     private final int quantity;
@@ -27,7 +27,7 @@ public class BookingItems extends BaseEntity<BookingItemId> {
                 price.multiply(quantity).equals(subTotal);
     }
 
-    private BookingItems(Builder builder) {
+    private BookingItem(Builder builder) {
         super.setId(builder.bookingItemId);
         movie = builder.movie;
         quantity = builder.quantity;
@@ -114,8 +114,8 @@ public class BookingItems extends BaseEntity<BookingItemId> {
             return this;
         }
 
-        public BookingItems build() {
-            return new BookingItems(this);
+        public BookingItem build() {
+            return new BookingItem(this);
         }
     }
 }
