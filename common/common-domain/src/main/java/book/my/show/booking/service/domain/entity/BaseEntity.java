@@ -2,7 +2,7 @@ package book.my.show.booking.service.domain.entity;
 
 import java.util.Objects;
 
-@lombok.Getter
+
 public abstract class BaseEntity<ID> {
     private ID id;
 

@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Objects;
 
-@lombok.Getter
 public class Money {
     private final BigDecimal amount;
 
@@ -32,6 +31,10 @@ public class Money {
 
     public Money multiply(int multiplier) {
         return new Money(setScale(this.amount.multiply(new BigDecimal(multiplier))));
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
     }
 
     @Override

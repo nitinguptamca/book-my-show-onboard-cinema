@@ -2,7 +2,6 @@ package book.my.show.booking.service.domain.valueobject;
 
 import java.util.Objects;
 
-@lombok.Getter
 public abstract class BaseId<T> {
     private final T value;
     protected BaseId(T value) {
