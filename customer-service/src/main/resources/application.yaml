@@ -11,20 +11,19 @@ spring:
     database: POSTGRESQL
     open-in-view: true
     show-sql: true
-    #hibernate:
-     # ddl-auto: create
+    hibernate:
+     #### ddl-auto: create
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres?currentSchema=customer&binaryTransfer=true&reWriteBatchedInserts=true
     username: postgres
     password: admin
     driver-class-name: org.postgresql.Driver
     platform: postgres
-    schema: classpath:init-schema.sql
     initialization-mode: always
 
----
-spring:
-  config:
-    activate:
-      on-profile: docker
-    import: configserver:http://config-server:8888
+logging:
+  level:
+    org.springframework.web: DEBUG
+    guru.springframework.controllers: DEBUG
+    book.my.show: DEBUG
+

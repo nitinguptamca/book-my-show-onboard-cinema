@@ -1,24 +1,24 @@
-server.port: 7777
+server.port: 7778
+
 spring:
   application:
-    name: cinema-mgmt-service
+    name: customer-service
   config:
+    activate:
+      on-profile: default
     import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
   jpa:
-    open-in-view: false
+    database: POSTGRESQL
+    open-in-view: true
     show-sql: true
-    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+    hibernate:
+      ddl-auto: create
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=cinema&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=cinema&binaryTransfer=true&reWriteBatchedInserts=true
     username: postgres
     password: admin
     driver-class-name: org.postgresql.Driver
     platform: postgres
-    schema: classpath:init-schema.sql
-    data: classpath:init-data.sql
     initialization-mode: always
 
 ---
