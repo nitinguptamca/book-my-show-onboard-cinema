@@ -1,0 +1,13 @@
+server.port: 7777
+spring:
+  application:
+    name: cinema-mgmt-service
+  config:
+    import: optional:configserver:${CONFIG_SERVER_URL:http://localhost:8888/}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+    import: configserver:http://config-server:8888
