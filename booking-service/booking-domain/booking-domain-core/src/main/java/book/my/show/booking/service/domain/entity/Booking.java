@@ -171,7 +171,7 @@ public class Booking extends AggregateRoot<BookingId> {
         private Builder() {
         }
 
-        public Builder BookingId(BookingId val) {
+        public Builder bookingId(BookingId val) {
             BookingId = val;
             return this;
         }
@@ -202,7 +202,7 @@ public class Booking extends AggregateRoot<BookingId> {
             return this;
         }
 
-        public Builder BookingStatus(BookingStatus val) {
+        public Builder bookingStatus(BookingStatus val) {
             BookingStatus = val;
             return this;
         }
