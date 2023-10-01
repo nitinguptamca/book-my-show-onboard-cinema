@@ -11,7 +11,7 @@
     <parent>
         <artifactId>spring-boot-starter-parent</artifactId>
         <groupId>org.springframework.boot</groupId>
-        <version>3.0.5</version>
+        <version>3.0.9</version>
         <relativePath/>
     </parent>
     <modules>
@@ -24,7 +24,6 @@
         <module>config-server</module>
         <module>discovery-server</module>
         <module>api-gateway</module>
-        <module>customer-service</module>
         <module>booking-service</module>
     </modules>
 
@@ -40,6 +39,7 @@
         <avro.version>1.11.1</avro.version>
         <lombok.version>1.18.28</lombok.version>
         <postgresql.version>42.2.12</postgresql.version>
+        <spring-cloud.version>2022.0.4</spring-cloud.version>
     </properties>
 
     <dependencies>
@@ -175,10 +175,11 @@
                 <version>${postgresql.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-core</artifactId>
-                <version>${mockito.version}</version>
-                <scope>test</scope>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
