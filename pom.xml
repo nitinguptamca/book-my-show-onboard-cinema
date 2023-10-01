@@ -16,7 +16,6 @@
     </parent>
     <modules>
         <module>common</module>
-        <module>booking-service</module>
         <module>payment-service</module>
         <module>cinema-service</module>
         <module>cinema-management-service</module>
@@ -26,6 +25,7 @@
         <module>discovery-server</module>
         <module>api-gateway</module>
         <module>customer-service</module>
+        <module>booking-service</module>
     </modules>
 
     <properties>

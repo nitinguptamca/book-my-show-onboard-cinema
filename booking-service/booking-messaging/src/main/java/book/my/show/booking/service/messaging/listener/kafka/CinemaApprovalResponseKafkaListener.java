@@ -22,13 +22,13 @@ import static book.my.show.booking.service.domain.constants.DomainConstants.FAIL
 @Component
 public class CinemaApprovalResponseKafkaListener implements KafkaConsumer<CinemaApprovalResponseAvroModel> {
 
-    private final CinemaApprovalResponseMessageListener restaurantApprovalResponseMessageListener;
+    private final CinemaApprovalResponseMessageListener cinemaApprovalResponseMessageListener;
     private final BookingMessagingDataMapper bookingMessagingDataMapper;
 
     public CinemaApprovalResponseKafkaListener(CinemaApprovalResponseMessageListener
-                                                           restaurantApprovalResponseMessageListener,
+                                                           cinemaApprovalResponseMessageListener,
                                                BookingMessagingDataMapper bookingMessagingDataMapper) {
-        this.restaurantApprovalResponseMessageListener = restaurantApprovalResponseMessageListener;
+        this.cinemaApprovalResponseMessageListener = cinemaApprovalResponseMessageListener;
         this.bookingMessagingDataMapper = bookingMessagingDataMapper;
     }
 
@@ -45,19 +45,19 @@ public class CinemaApprovalResponseKafkaListener implements KafkaConsumer<Cinema
                 partitions.toString(),
                 offsets.toString());
 
-        messages.forEach(restaurantApprovalResponseAvroModel -> {
-            if (BookingApprovalStatus.APPROVED == restaurantApprovalResponseAvroModel.getBookingApprovalStatus()) {
+        messages.forEach(cinemaApprovalResponseAvroModel -> {
+            if (BookingApprovalStatus.APPROVED == cinemaApprovalResponseAvroModel.getBookingApprovalStatus()) {
                 log.info("Processing approved booking for booking id: {}",
-                        restaurantApprovalResponseAvroModel.getBookingId());
-                restaurantApprovalResponseMessageListener.bookingApproved(bookingMessagingDataMapper
-                        .approvalResponseAvroModelToApprovalResponse(restaurantApprovalResponseAvroModel));
-            } else if (BookingApprovalStatus.REJECTED == restaurantApprovalResponseAvroModel.getBookingApprovalStatus()) {
+                        cinemaApprovalResponseAvroModel.getBookingId());
+                cinemaApprovalResponseMessageListener.bookingApproved(bookingMessagingDataMapper
+                        .approvalResponseAvroModelToApprovalResponse(cinemaApprovalResponseAvroModel));
+            } else if (BookingApprovalStatus.REJECTED == cinemaApprovalResponseAvroModel.getBookingApprovalStatus()) {
                 log.info("Processing rejected booking for booking id: {}, with failure messages: {}",
-                        restaurantApprovalResponseAvroModel.getBookingId(),
+                        cinemaApprovalResponseAvroModel.getBookingId(),
                         String.join(FAILURE_MESSAGE_DELIMITER,
-                                restaurantApprovalResponseAvroModel.getFailureMessages()));
-                restaurantApprovalResponseMessageListener.bookingRejected(bookingMessagingDataMapper
-                        .approvalResponseAvroModelToApprovalResponse(restaurantApprovalResponseAvroModel));
+                                cinemaApprovalResponseAvroModel.getFailureMessages()));
+                cinemaApprovalResponseMessageListener.bookingRejected(bookingMessagingDataMapper
+                        .approvalResponseAvroModelToApprovalResponse(cinemaApprovalResponseAvroModel));
             }
         });
 

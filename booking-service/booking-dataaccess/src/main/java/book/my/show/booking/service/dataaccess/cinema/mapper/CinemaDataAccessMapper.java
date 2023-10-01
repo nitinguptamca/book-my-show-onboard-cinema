@@ -28,14 +28,14 @@ public class CinemaDataAccessMapper {
                 cinemaEntities.stream().findFirst().orElseThrow(() ->
                         new CinemaDataAccessException("Cinema could not be found!"));
 
-        List<Movie> cinemaProducts = cinemaEntities.stream().map(entity ->
+        List<Movie> cinemamovies = cinemaEntities.stream().map(entity ->
                 new Movie(new MovieId(entity.getMovieId()), entity.getMovieName(),
                         entity.getSeatNumber(),entity.getMovieTime(),
                         new Money(entity.getMoviePrice()))).toList();
 
         return Cinema.builder()
                 .cinemaId(new CinemaId(cinemaEntity.getCinemaId()))
-                .movies(cinemaProducts)
+                .movies(cinemamovies)
                 .active(cinemaEntity.getCinemaActive())
                 .build();
     }
